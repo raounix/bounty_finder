@@ -101,7 +101,7 @@ if __name__ == "__main__":
         send_message_to_group(new_domains,new_wildCards,url)
 
         counter+=1
-        if counter > 12 :
+        if counter > 11 :
             urls = url+"&text= Bot is Live :)"
             requests.get(urls).json() # this sends the message
             counter = 0
