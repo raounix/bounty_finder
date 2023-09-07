@@ -5,11 +5,16 @@ import time
 import requests
 import json
 
-domains_raw = requests.get('https://github.com/arkadiyt/bounty-targets-data/blob/main/data/domains.txt')
-wildCards_raw = requests.get('https://github.com/arkadiyt/bounty-targets-data/blob/main/data/wildcards.txt')
 
-domains = domains_raw.json()["payload"]["blob"]['rawLines']
-wildCards = wildCards_raw.json()["payload"]["blob"]['rawLines']
+############################################################
+def get_new_domains_update():
+    domains_raw = requests.get('https://github.com/arkadiyt/bounty-targets-data/blob/main/data/domains.txt')
+    wildCards_raw = requests.get('https://github.com/arkadiyt/bounty-targets-data/blob/main/data/wildcards.txt')
+
+    domains = domains_raw.json()["payload"]["blob"]['rawLines']
+    wildCards = wildCards_raw.json()["payload"]["blob"]['rawLines']
+    return domains,wildCards
+############################################################
 
 
 ############################################################
@@ -90,7 +95,7 @@ def send_message_to_group(domains,wildcard_domains,url):
 if __name__ == "__main__":
     config_data = read_config_file()
     url = set_telegram_url_config(config_data)
-
+    domains,wildCards = get_new_domains_update()
     check_file_exist("./db/domains.txt",domains)
     check_file_exist("./db/wildcards.txt",wildCards)
     counter = 0
