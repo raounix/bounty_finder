@@ -1293,3 +1293,8 @@ matrix.agent.*.tchap.gouv.fr
 *.bugcrowd.com
 *.api.t-mobile.com
 *.metrobyt-mobile.com
+*.veriff.com
+*.immutable.com
+*.imtbl.com
+*.api.service.nsw.gov.au
+*.service.nsw.gov.au
