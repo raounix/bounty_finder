@@ -1394,3 +1394,4 @@ wv209976*.vlaanderen.be
 *.senecadata.com
 *.saytechnologies.com
 *.say.rocks
+shop.*.be
