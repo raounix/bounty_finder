@@ -109,7 +109,7 @@ if __name__ == "__main__":
         counter+=1
         if counter > 11 :
             urls = url+"&text= Bot is Live :)"
-            requests.get(urls).json() # this sends the message
+            response = requests.get(urls).json() # this sends the message
             counter = 0
         time.sleep(300)
 ############################################################
